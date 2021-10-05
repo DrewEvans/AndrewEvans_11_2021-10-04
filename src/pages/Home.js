@@ -1,4 +1,5 @@
 import useFetch from "../hooks/useFetch";
+import { ApartmentCard } from "../components/index";
 
 const Home = (props) => {
   const { response } = useFetch(`http://localhost:5000/api/data`);
@@ -23,6 +24,17 @@ const Home = (props) => {
             return (
               <>
                 <h1> Render components Here!!!!</h1>
+                <ApartmentCard
+                  key={id}
+                  title={title}
+                  cover={cover}
+                  pictures={pictures}
+                  host={host}
+                  equipments={equipments}
+                  ratings={ratings}
+                  tags={tags}
+                  id={id}
+                />
                 <p>{title}</p>
                 <p>{description}</p>
               </>
