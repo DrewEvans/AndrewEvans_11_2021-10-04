@@ -1,9 +1,7 @@
+import { starRating } from "../functions";
+
 const ApartmentInfo = ({ title, location, host, rating, tags }) => {
-  console.log(title);
-  console.log(location);
-  console.log(host);
-  console.log(rating);
-  console.log(tags);
+  rating = parseInt(rating);
 
   return (
     <>
@@ -11,13 +9,25 @@ const ApartmentInfo = ({ title, location, host, rating, tags }) => {
         <div>
           <h2>{title}</h2>
           <h3>{location}</h3>
-          {tags.map((x) => (
-            <li>{x}</li>
+          {tags.map((x, i) => (
+            <li key={i}>{x}</li>
           ))}
         </div>
         <div>
           <h4>{host.name}</h4>
-          <img src={host.picture} />
+          <img
+            src={host.picture}
+            alt={host.picture
+              .replaceAll(
+                "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/",
+                ""
+              )
+              .replaceAll(".jpg", "")
+              .replaceAll("_", " ")
+              .replaceAll(/([A-Z]+)/g, " $1")
+              .replaceAll(/(^\w|\s\w)/g, (m) => m.toUpperCase())}
+          />
+          <ul>{starRating(rating)}</ul>
         </div>
       </section>
     </>

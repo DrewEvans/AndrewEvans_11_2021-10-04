@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-import { useState, useEffect } from "react";
+
 import { ApartmentInfo, Carousel } from "../components";
 
 const ApartmentPage = (props) => {
@@ -24,19 +24,20 @@ const ApartmentPage = (props) => {
               rating,
               tags,
               id,
+              key,
             } = x;
             return (
-              <>
+              <main>
                 <Carousel pictures={pictures} />
                 <ApartmentInfo
+                  key={key}
                   title={title}
                   location={location}
                   host={host}
                   rating={rating}
                   tags={tags}
                 />
-                <ul></ul>
-              </>
+              </main>
             );
           })}
         </div>

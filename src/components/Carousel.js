@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Carousel = ({ pictures }) => {
   const [current, setCurrent] = useState(0);
   const length = pictures.length;
+
+  const leftAngle = <FontAwesomeIcon icon={faAngleLeft} />;
+  const rightAngle = <FontAwesomeIcon icon={faAngleRight} />;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -25,11 +30,21 @@ const Carousel = ({ pictures }) => {
 
   return (
     <>
-      <div>
-        <span onClick={prevSlide}>Click Me</span>
-        <img src={pictures[current]} alt={altText} />
-        <span onClick={nextSlide}>Click Me</span>
-      </div>
+      <section>
+        <span className='left-angle' onClick={prevSlide}>
+          {leftAngle}
+        </span>
+        <div className='carousel-img-container'>
+          <img
+            className='carousel-image'
+            src={pictures[current]}
+            alt={altText}
+          />
+        </div>
+        <span className='right-angle' onClick={nextSlide}>
+          {rightAngle}
+        </span>
+      </section>
     </>
   );
 };
