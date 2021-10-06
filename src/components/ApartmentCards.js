@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const ApartmentCard = ({
   title,
   cover,
@@ -11,7 +13,9 @@ const ApartmentCard = ({
 }) => {
   return (
     <>
-      <img src={cover} />
+      <NavLink to={`/appartement/${id}`}>
+        <img src={cover} />
+      </NavLink>
       <h1>{title}</h1>
     </>
   );

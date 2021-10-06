@@ -1,7 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import { ApartmentCard } from "../components/index";
 
-const Home = (props) => {
+const Home = () => {
   const { response } = useFetch(`http://localhost:5000/api/data`);
   const apartments = response.data;
 
@@ -12,6 +12,7 @@ const Home = (props) => {
           {apartments.map((x) => {
             const {
               title,
+              location,
               cover,
               pictures,
               description,
@@ -27,6 +28,7 @@ const Home = (props) => {
                 <ApartmentCard
                   key={id}
                   title={title}
+                  location={location}
                   cover={cover}
                   pictures={pictures}
                   host={host}

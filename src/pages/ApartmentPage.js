@@ -1,5 +1,6 @@
 import useFetch from "../hooks/useFetch";
 import { useState, useEffect } from "react";
+import { ApartmentInfo, Carousel } from "../components";
 
 const ApartmentPage = (props) => {
   const { location } = props;
@@ -15,6 +16,7 @@ const ApartmentPage = (props) => {
             const {
               title,
               cover,
+              location,
               pictures,
               description,
               host,
@@ -25,9 +27,15 @@ const ApartmentPage = (props) => {
             } = x;
             return (
               <>
-                <h1> Render components Here!!!!</h1>
-                <p>{title}</p>
-                <p>{description}</p>
+                <Carousel pictures={pictures} />
+                <ApartmentInfo
+                // title={title}
+                // location={location}
+                // host={host}
+                // ratings={ratings}
+                // tags={tags}
+                />
+                <ul></ul>
               </>
             );
           })}
