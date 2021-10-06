@@ -21,7 +21,7 @@ const ApartmentPage = (props) => {
               description,
               host,
               equipments,
-              ratings,
+              rating,
               tags,
               id,
             } = x;
@@ -29,11 +29,11 @@ const ApartmentPage = (props) => {
               <>
                 <Carousel pictures={pictures} />
                 <ApartmentInfo
-                // title={title}
-                // location={location}
-                // host={host}
-                // ratings={ratings}
-                // tags={tags}
+                  title={title}
+                  location={location}
+                  host={host}
+                  rating={rating}
+                  tags={tags}
                 />
                 <ul></ul>
               </>
