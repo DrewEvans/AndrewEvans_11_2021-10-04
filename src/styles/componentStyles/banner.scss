@@ -1,0 +1,18 @@
+@import "../variables.scss";
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 10px;
+  }
+  span {
+    color: #fff;
+
+    font-size: 2em;
+    position: absolute;
+    right: 41%;
+    margin: 100px 0;
+  }
+}

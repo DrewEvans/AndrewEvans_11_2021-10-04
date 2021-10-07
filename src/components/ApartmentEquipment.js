@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import "../styles/componentStyles/equipmentDropdown.scss";
 
 const ApartmentEquipment = ({ equipments }) => {
   console.log(equipments);
@@ -12,15 +13,18 @@ const ApartmentEquipment = ({ equipments }) => {
 
   return (
     <>
-      <div
-        onClick={() =>
-          openDialog ? setOpenDialog(false) : setOpenDialog(true)
-        }>
-        Équipements
-        {!openDialog && <span>{angleDown}</span>}
-        {openDialog && <span>{angleUp}</span>}
+      <div className='equipment-dropdown'>
+        <div
+          className='button'
+          onClick={() =>
+            openDialog ? setOpenDialog(false) : setOpenDialog(true)
+          }>
+          Équipements
+          {!openDialog && <span>{angleDown}</span>}
+          {openDialog && <span>{angleUp}</span>}
+        </div>
         {openDialog ? (
-          <ul>
+          <ul className='open-dialog'>
             {equipments.map((equipment, i) => (
               <li key={i}>{equipment}</li>
             ))}

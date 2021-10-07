@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 // import useFetch from "./hooks/useFetch";
 import { ErrorPage, About } from "./pages/index";
-import "./App.css";
+import "./App.scss";
 
 const Home = lazy(() => import("./pages/Home"));
 const ApartmentPage = lazy(() => import("./pages/ApartmentPage"));

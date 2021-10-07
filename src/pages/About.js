@@ -17,7 +17,7 @@ const About = () => {
   return (
     <>
       <NavHeader />
-      <div>
+      <div className='banner-container'>
         <img src={Banner} alt='broken' />
       </div>
       <div

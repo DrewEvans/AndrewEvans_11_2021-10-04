@@ -1,0 +1,19 @@
+@import "../variables.scss";
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 10em;
+
+  .links-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 250px;
+    h2 {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}

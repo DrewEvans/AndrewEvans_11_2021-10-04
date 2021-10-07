@@ -1,0 +1,15 @@
+@import "./styles/functions.scss";
+
+body {
+  margin: 0 10em;
+
+  @include phone {
+    margin: 0;
+  }
+  @include tablet {
+    margin: 0;
+  }
+  @include laptop {
+    margin: 0;
+  }
+}

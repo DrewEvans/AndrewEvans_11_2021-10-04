@@ -30,7 +30,7 @@ const Carousel = ({ pictures }) => {
 
   return (
     <>
-      <section>
+      <div>
         <span className='left-angle' onClick={prevSlide}>
           {leftAngle}
         </span>
@@ -44,7 +44,7 @@ const Carousel = ({ pictures }) => {
         <span className='right-angle' onClick={nextSlide}>
           {rightAngle}
         </span>
-      </section>
+      </div>
     </>
   );
 };
