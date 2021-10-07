@@ -3,5 +3,6 @@ export { default as ApartmentDescription } from "./ApartmentDescription";
 export { default as ApartmentEquipment } from "./ApartmentEquipment";
 export { default as Carousel } from "./Carousel";
 export { default as ApartmentInfo } from "./ApartmentInfo";
-export { default as Header } from "./Header";
-export { default as MainCover } from "./MainCover";
+export { default as NavHeader } from "./NavHeader";
+export { default as Banner } from "./MainBanner";
+export { default as PageFooter } from "./PageFooter";

@@ -121,6 +121,7 @@ const starRating = (num) => {
           {element}
         </li>
       </>;
+      break;
   }
 };
 

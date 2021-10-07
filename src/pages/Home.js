@@ -1,5 +1,6 @@
 import useFetch from "../hooks/useFetch";
-import { ApartmentCard } from "../components/index";
+import { ApartmentCard, NavHeader, PageFooter } from "../components/index";
+import MainBanner from "../components/MainBanner";
 
 const Home = () => {
   const { response } = useFetch(`http://localhost:5000/api/data`);
@@ -7,6 +8,8 @@ const Home = () => {
 
   return (
     <>
+      <NavHeader />
+      <MainBanner />
       {apartments && (
         <div>
           {apartments.map((x) => {
@@ -44,6 +47,7 @@ const Home = () => {
           })}
         </div>
       )}
+      <PageFooter />
     </>
   );
 };

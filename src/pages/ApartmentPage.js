@@ -1,6 +1,13 @@
 import useFetch from "../hooks/useFetch";
 
-import { ApartmentInfo, Carousel } from "../components";
+import {
+  ApartmentDescription,
+  ApartmentEquipment,
+  ApartmentInfo,
+  Carousel,
+  NavHeader,
+  PageFooter,
+} from "../components";
 
 const ApartmentPage = (props) => {
   const { location } = props;
@@ -10,6 +17,9 @@ const ApartmentPage = (props) => {
 
   return (
     <>
+      <nav>
+        <NavHeader />
+      </nav>
       {apartment && (
         <div>
           {apartment.map((x) => {
@@ -37,11 +47,14 @@ const ApartmentPage = (props) => {
                   rating={rating}
                   tags={tags}
                 />
+                <ApartmentDescription description={description} />
+                <ApartmentEquipment equipments={equipments} />
               </main>
             );
           })}
         </div>
       )}
+      <PageFooter />
     </>
   );
 };
