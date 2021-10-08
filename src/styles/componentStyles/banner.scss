@@ -3,13 +3,14 @@
 .banner-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 1em;
 
   img {
     border-radius: 10px;
   }
   span {
     color: #fff;
-
+    text-shadow: black 0.5px 0 10px;
     font-size: 2em;
     position: absolute;
     right: 41%;

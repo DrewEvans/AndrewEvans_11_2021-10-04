@@ -8,6 +8,7 @@ import {
   NavHeader,
   PageFooter,
 } from "../components";
+import "../styles/apartment.scss";
 
 const ApartmentPage = (props) => {
   const { location } = props;
@@ -25,7 +26,6 @@ const ApartmentPage = (props) => {
           {apartment.map((x) => {
             const {
               title,
-              cover,
               location,
               pictures,
               description,
@@ -33,11 +33,10 @@ const ApartmentPage = (props) => {
               equipments,
               rating,
               tags,
-              id,
               key,
             } = x;
             return (
-              <main>
+              <main className='apart-main'>
                 <Carousel pictures={pictures} />
                 <ApartmentInfo
                   key={key}

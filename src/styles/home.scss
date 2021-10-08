@@ -1,2 +1,29 @@
 @import "../styles/functions.scss";
 @import "../styles/variables.scss";
+
+.home-main {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-container {
+  background-color: $secondary-color;
+  display: flex;
+  width: 1240px;
+  margin: 2em;
+
+  justify-content: space-around;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  transition: all 1s ease-out;
+
+  :hover {
+    color: $primary-color;
+    .card-container {
+      -webkit-box-shadow: 3px 2px 14px 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 3px 2px 14px 3px rgba(0, 0, 0, 0.5);
+      transform: translateY(-1px) translateX(-1px);
+    }
+  }
+}

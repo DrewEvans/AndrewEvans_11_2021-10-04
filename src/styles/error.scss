@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.error-container {
+  text-align: center;
+  color: $primary-color;
+  .error-code {
+    font-size: 15em;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+  .error-msg {
+    font-size: 3em;
+  }
+  span {
+    font-size: 1.5em;
+    color: $primary-color;
+    text-decoration: $primary-color;
+    :hover {
+      text-shadow: black 1px 0 10px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../variables.scss";
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+
+  span {
+    position: relative;
+    font-size: 5em;
+    color: #fff;
+    padding: 16px;
+    text-shadow: black 1px 0 10px;
+  }
+  .right-angle {
+    right: 6%;
+  }
+  .left-angle {
+    left: 6%;
+  }
+
+  img {
+    width: 1245px;
+    height: 415px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}

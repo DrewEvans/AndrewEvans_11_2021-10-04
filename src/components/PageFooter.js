@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../images/LOGO.svg";
 import "../styles/componentStyles/footer.scss";
 
 const FooterPage = () => {

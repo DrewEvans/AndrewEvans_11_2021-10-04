@@ -6,7 +6,7 @@ const NavHeader = () => {
   return (
     <div className='nav-header'>
       <NavLink to='/'>
-        <img src={Logo} />
+        <img src={Logo} alt='Kasa-logo' />
       </NavLink>
       <div className='links-container'>
         <NavLink style={{ textDecoration: "none" }} to='/'>

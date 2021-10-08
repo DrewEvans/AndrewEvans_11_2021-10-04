@@ -9,46 +9,48 @@ const Home = () => {
 
   return (
     <>
-      <NavHeader />
+      <nav>
+        <NavHeader />
+      </nav>
       <MainBanner />
       {apartments && (
-        <div className='test'>
-          {apartments.map((x) => {
-            const {
-              title,
-              location,
-              cover,
-              pictures,
-              description,
-              host,
-              equipments,
-              ratings,
-              tags,
-              id,
-            } = x;
-            return (
-              <>
-                <h1> Render components Here!!!!</h1>
-                <ApartmentCard
-                  key={id}
-                  title={title}
-                  location={location}
-                  cover={cover}
-                  pictures={pictures}
-                  host={host}
-                  equipments={equipments}
-                  ratings={ratings}
-                  tags={tags}
-                  id={id}
-                />
-                <p>{title}</p>
-                <p>{description}</p>
-              </>
-            );
-          })}
-        </div>
+        <main className='home-main'>
+          <div className='cards-container'>
+            {apartments.map((x) => {
+              const {
+                title,
+                location,
+                cover,
+                pictures,
+                host,
+                equipments,
+                ratings,
+                tags,
+                id,
+              } = x;
+              return (
+                <>
+                  <ApartmentCard
+                    key={id}
+                    title={title}
+                    location={location}
+                    cover={cover}
+                    pictures={pictures}
+                    host={host}
+                    equipments={equipments}
+                    ratings={ratings}
+                    tags={tags}
+                    id={id}
+                  />
+                </>
+              );
+            })}
+          </div>
+        </main>
       )}
-      <PageFooter />
+      <footer>
+        <PageFooter />
+      </footer>
     </>
   );
 };
