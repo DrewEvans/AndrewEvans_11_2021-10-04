@@ -4,7 +4,7 @@ import "../styles/error.scss";
 
 const ErrorPage = () => {
   return (
-    <div className='error-container'>
+    <footer className='error-container'>
       <NavHeader />
       <h2 className='error-code'>404</h2>
       <h2 className='error-msg'>
@@ -13,7 +13,7 @@ const ErrorPage = () => {
       <NavLink to='/'>
         <span>Retourner sur la page d’accueil</span>
       </NavLink>
-    </div>
+    </footer>
   );
 };
 

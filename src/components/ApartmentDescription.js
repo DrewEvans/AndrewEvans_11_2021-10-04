@@ -23,7 +23,14 @@ const ApartmentDescription = ({ description }) => {
           {!openDialog && <span>{angleDown}</span>}
           {openDialog && <span>{angleUp}</span>}
         </div>
-        {openDialog ? <p>{description}</p> : null}
+        {openDialog ? (
+          <p
+            onClick={() =>
+              openDialog ? setOpenDialog(false) : setOpenDialog(true)
+            }>
+            {description}
+          </p>
+        ) : null}
       </div>
     </>
   );

@@ -24,9 +24,13 @@ const ApartmentEquipment = ({ equipments }) => {
           {openDialog && <span>{angleUp}</span>}
         </div>
         {openDialog ? (
-          <ul className='open-dialog'>
+          <ul
+            className='open-dialog'
+            onClick={() =>
+              openDialog ? setOpenDialog(false) : setOpenDialog(true)
+            }>
             {equipments.map((equipment, i) => (
-              <li key={i}>{equipment}</li>
+              <li key={`${i}-equip`}>{equipment}</li>
             ))}
           </ul>
         ) : null}

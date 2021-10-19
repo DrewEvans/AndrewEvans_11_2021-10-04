@@ -9,10 +9,10 @@ import {
   PageFooter,
 } from "../components";
 import "../styles/apartment.scss";
+import { useParams } from "react-router";
 
-const ApartmentPage = (props) => {
-  const { location } = props;
-  const id = location.pathname.replace("/appartement/", "");
+const ApartmentPage = () => {
+  const { id } = useParams();
   const { response } = useFetch(`http://localhost:5000/api/appartement/${id}`);
   const apartment = response.data;
 
@@ -46,14 +46,15 @@ const ApartmentPage = (props) => {
                   rating={rating}
                   tags={tags}
                 />
-                <ApartmentDescription description={description} />
-                <ApartmentEquipment equipments={equipments} />
+                <div className='dropdown-container'>
+                  <ApartmentDescription description={description} />
+                  <ApartmentEquipment equipments={equipments} />
+                </div>
               </main>
             );
           })}
         </div>
       )}
-      <PageFooter />
     </>
   );
 };

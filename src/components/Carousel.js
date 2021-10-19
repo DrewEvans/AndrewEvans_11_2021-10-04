@@ -8,6 +8,8 @@ const Carousel = ({ pictures }) => {
   const [current, setCurrent] = useState(0);
   const length = pictures.length;
 
+  console.log(pictures.length);
+
   const leftAngle = <FontAwesomeIcon icon={faAngleLeft} />;
   const rightAngle = <FontAwesomeIcon icon={faAngleRight} />;
 
@@ -32,15 +34,19 @@ const Carousel = ({ pictures }) => {
   return (
     <>
       <div className='carousel-container'>
-        <span className='left-angle' onClick={prevSlide}>
-          {leftAngle}
-        </span>
+        {pictures.length > 1 ? (
+          <span className='left-angle' onClick={prevSlide}>
+            {leftAngle}
+          </span>
+        ) : null}
 
         <img className='carousel-image' src={pictures[current]} alt={altText} />
 
-        <span className='right-angle' onClick={nextSlide}>
-          {rightAngle}
-        </span>
+        {pictures.length > 1 ? (
+          <span className='right-angle' onClick={nextSlide}>
+            {rightAngle}
+          </span>
+        ) : null}
       </div>
     </>
   );

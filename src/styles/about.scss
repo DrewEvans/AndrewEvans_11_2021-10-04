@@ -1,0 +1,26 @@
+@import "../styles/variables.scss";
+
+.about-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em auto;
+  width: 1240px;
+
+  .more-info-btn {
+    background-color: $primary-color;
+
+    .btn-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .dialog-box {
+        display: block;
+        position: relative;
+        color: $primary-color;
+        background-color: $secondary-color;
+      }
+    }
+  }
+}

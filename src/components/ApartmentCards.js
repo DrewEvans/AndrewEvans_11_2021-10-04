@@ -4,7 +4,10 @@ import "../styles/componentStyles/apartmentCard.scss";
 const ApartmentCard = ({ title, cover, id }) => {
   return (
     <>
-      <NavLink to={`/appartement/${id}`} style={{ textDecoration: "none" }}>
+      <NavLink
+        to={`/appartement/${id}`}
+        style={{ textDecoration: "none" }}
+        key={id}>
         <div className='card-container'>
           <img
             src={cover}
