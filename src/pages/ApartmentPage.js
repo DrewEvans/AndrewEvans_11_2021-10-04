@@ -1,5 +1,6 @@
 import useFetch from "../hooks/useFetch";
 
+import ErrorPage from "../pages/ErrorPage";
 import {
   ApartmentDescription,
   ApartmentEquipment,
@@ -15,6 +16,18 @@ const ApartmentPage = () => {
   const { id } = useParams();
   const { response } = useFetch(`http://localhost:5000/api/appartement/${id}`);
   const apartment = response.data;
+
+  if (response.data != null && response.loading === false) {
+    console.log(response.data);
+    console.log("displ");
+  }
+
+  if (response.data && response.loading === false) {
+    if (response.data.length <= 0) {
+      console.log(response.data);
+      return <ErrorPage />;
+    }
+  }
 
   return (
     <>
