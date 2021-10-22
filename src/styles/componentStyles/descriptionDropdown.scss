@@ -5,17 +5,17 @@
   background-color: $primary-color;
   color: #fff;
   width: 582px;
-  height: auto;
   padding: 0;
   border-radius: 5px;
   display: flex;
+  position: relative;
   justify-content: flex-start;
   flex-direction: column;
-  cursor: pointer;
   height: max-content;
+  cursor: pointer;
 
   .button {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
@@ -31,6 +31,5 @@
     background-color: $secondary-color;
     padding: 0.25em;
     margin: 0;
-    border-radius: 5px;
   }
 }

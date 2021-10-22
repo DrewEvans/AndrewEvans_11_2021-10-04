@@ -10,7 +10,7 @@ const ErrorPage = () => {
       <h2 className='error-msg'>
         Oups! La page que vous demandez n'existe pas.
       </h2>
-      <NavLink to='/'>
+      <NavLink to='/' style={{ textDecorationColor: "#ff6060" }}>
         <span>Retourner sur la page d’accueil</span>
       </NavLink>
     </footer>

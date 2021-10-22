@@ -7,13 +7,52 @@
   margin: 2em auto;
   width: 1240px;
 
-  .more-info-btn {
+  .dropdown-container {
+    width: 100%;
     background-color: $primary-color;
+    border-radius: 5px;
+    margin: 1em 0;
+
+    .btn-header {
+      color: white;
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-weight: 500;
+        font-size: 1em;
+        margin-left: 1em;
+      }
+      span {
+        font-size: 1.5em;
+        margin-right: 1em;
+      }
+    }
+    .dialog-box {
+      color: $primary-color;
+      background-color: white;
+      display: block;
+      position: relative;
+      margin: 0;
+      padding: 0.5em;
+    }
+  }
+
+  .more-info-btn {
+    display: flex;
+
+    background-color: $primary-color;
+    height: 28px;
+    border-radius: 5px;
+    margin: 0.5em 0;
 
     .btn-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      cursor: pointer;
 
       .dialog-box {
         display: block;
