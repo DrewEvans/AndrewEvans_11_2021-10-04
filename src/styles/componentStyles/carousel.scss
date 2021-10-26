@@ -1,8 +1,14 @@
 @import "../variables.scss";
+@import "../functions.scss";
 
 .carousel-container {
   display: flex;
   align-items: center;
+
+  @include phone {
+    justify-content: center;
+    width: 330px;
+  }
 
   span {
     position: relative;
@@ -10,12 +16,21 @@
     color: #fff;
     padding: 16px;
     text-shadow: black 1px 0 10px;
+    @include phone {
+      font-size: 2em;
+    }
   }
   .right-angle {
     right: 6%;
+    @include phone {
+      right: 10%;
+    }
   }
   .left-angle {
     left: 6%;
+    @include phone {
+      left: 10%;
+    }
   }
 
   img {
@@ -23,5 +38,10 @@
     height: 415px;
     object-fit: cover;
     border-radius: 10px;
+
+    @include phone {
+      width: 335px;
+      height: 255px;
+    }
   }
 }

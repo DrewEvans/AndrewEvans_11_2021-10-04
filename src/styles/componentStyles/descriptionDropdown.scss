@@ -14,6 +14,11 @@
   height: max-content;
   cursor: pointer;
 
+  @include phone {
+    margin-bottom: 1.5em;
+    width: 335px;
+  }
+
   .button {
     display: inline-flex;
     justify-content: space-between;

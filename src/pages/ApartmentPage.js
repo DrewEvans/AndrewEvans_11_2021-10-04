@@ -11,6 +11,7 @@ import {
 } from "../components";
 import "../styles/apartment.scss";
 import { useParams } from "react-router";
+import FooterPage from "../components/PageFooter";
 
 const ApartmentPage = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const ApartmentPage = () => {
   }
 
   return (
-    <>
+    <div className='apartment-page-container'>
       <nav>
         <NavHeader />
       </nav>
@@ -68,7 +69,8 @@ const ApartmentPage = () => {
           })}
         </div>
       )}
-    </>
+      <FooterPage />
+    </div>
   );
 };
 

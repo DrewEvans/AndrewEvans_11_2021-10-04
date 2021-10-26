@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/about.scss";
+import FooterPage from "../components/PageFooter";
 
 const About = () => {
   const [openDialog1, setOpenDialog1] = useState(false);
@@ -16,7 +17,7 @@ const About = () => {
   const angleDown = <FontAwesomeIcon icon={faAngleDown} />;
 
   return (
-    <>
+    <div className='about-page-container'>
       <NavHeader />
       <div className='banner-container'>
         <img src={Banner} alt='broken' />
@@ -98,7 +99,8 @@ const About = () => {
           ) : null}
         </div>
       </div>
-    </>
+      <FooterPage />
+    </div>
   );
 };
 export default About;

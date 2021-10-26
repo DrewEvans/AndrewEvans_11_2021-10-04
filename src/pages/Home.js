@@ -2,13 +2,14 @@ import useFetch from "../hooks/useFetch";
 import { ApartmentCard, NavHeader, PageFooter } from "../components/index";
 import MainBanner from "../components/MainBanner";
 import "../styles/home.scss";
+import FooterPage from "../components/PageFooter";
 
 const Home = () => {
   const { response } = useFetch(`http://localhost:5000/api/data`);
   const apartments = response.data;
 
   return (
-    <>
+    <div className='home-page-container'>
       <nav>
         <NavHeader />
       </nav>
@@ -48,7 +49,8 @@ const Home = () => {
           </div>
         </main>
       )}
-    </>
+      <FooterPage />
+    </div>
   );
 };
 

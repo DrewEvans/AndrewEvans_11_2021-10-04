@@ -1,12 +1,25 @@
 @import "../variables.scss";
+@import "../functions.scss";
 
 .banner-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1em;
+  margin: 0 auto;
+
+  @include phone {
+    width: 375px;
+    margin-bottom: 0;
+  }
 
   img {
     border-radius: 10px;
+
+    @include phone {
+      width: 340px;
+      height: 111px;
+      object-fit: cover;
+      margin: auto;
+    }
   }
   span {
     color: #fff;
@@ -15,5 +28,12 @@
     position: absolute;
     right: 41%;
     margin: 100px 0;
+
+    @include phone {
+      font-size: 1.5em;
+      width: 220px;
+      left: 2em;
+      margin: 26px 0 26px 0;
+    }
   }
 }

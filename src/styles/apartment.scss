@@ -1,4 +1,13 @@
 @import "./variables.scss";
+@import "./functions.scss";
+
+.apartment-page-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 190px; /* height of your footer */
+}
 
 .apart-main {
   display: flex;
@@ -12,5 +21,11 @@
     margin: 2em 0;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @include phone {
+      justify-content: space-evenly;
+      height: auto;
+      width: 365px;
+    }
   }
 }

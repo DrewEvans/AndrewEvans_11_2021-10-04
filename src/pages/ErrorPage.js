@@ -1,10 +1,11 @@
 import { NavHeader } from "../components";
 import { NavLink } from "react-router-dom";
 import "../styles/error.scss";
+import FooterPage from "../components/PageFooter";
 
 const ErrorPage = () => {
   return (
-    <footer className='error-container'>
+    <div className='error-container'>
       <NavHeader />
       <h2 className='error-code'>404</h2>
       <h2 className='error-msg'>
@@ -13,7 +14,8 @@ const ErrorPage = () => {
       <NavLink to='/' style={{ textDecorationColor: "#ff6060" }}>
         <span>Retourner sur la page d’accueil</span>
       </NavLink>
-    </footer>
+      <FooterPage />
+    </div>
   );
 };
 

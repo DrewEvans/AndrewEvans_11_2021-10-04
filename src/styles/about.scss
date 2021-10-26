@@ -1,4 +1,16 @@
 @import "../styles/variables.scss";
+@import "../styles/functions.scss";
+
+.about-page-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 50px; /* height of your footer */
+  @include phone {
+    padding-bottom: 160px;
+  }
+}
 
 .about-dropdown-container {
   display: flex;
@@ -6,6 +18,11 @@
   justify-content: center;
   margin: 2em auto;
   width: 1240px;
+  position: relative;
+
+  @include phone {
+    width: 335px;
+  }
 
   .dropdown-container {
     width: 100%;
@@ -37,29 +54,6 @@
       position: relative;
       margin: 0;
       padding: 0.5em;
-    }
-  }
-
-  .more-info-btn {
-    display: flex;
-
-    background-color: $primary-color;
-    height: 28px;
-    border-radius: 5px;
-    margin: 0.5em 0;
-
-    .btn-header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      cursor: pointer;
-
-      .dialog-box {
-        display: block;
-        position: relative;
-        color: $primary-color;
-        background-color: $secondary-color;
-      }
     }
   }
 }

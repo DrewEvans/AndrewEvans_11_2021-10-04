@@ -13,6 +13,9 @@
   flex-direction: column;
   height: max-content;
   cursor: pointer;
+  @include phone {
+    width: 335px;
+  }
 
   .button {
     display: inline-flex;

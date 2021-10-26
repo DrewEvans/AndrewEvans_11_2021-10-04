@@ -18,7 +18,6 @@ function App() {
           <Route exact path='/appartement/:id' component={ApartmentPage} />
           <Route component={ErrorPage} />
         </Switch>
-        <FooterPage />
       </Suspense>
     </Router>
   );

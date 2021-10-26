@@ -1,6 +1,14 @@
 @import "../styles/functions.scss";
 @import "../styles/variables.scss";
 
+.home-page-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 190px; /* height of your footer */
+}
+
 .home-main {
   display: flex;
   justify-content: center;
@@ -17,6 +25,10 @@
   flex-wrap: wrap;
   border-radius: 10px;
   transition: all 1s ease-out;
+
+  @include phone {
+    background-color: white;
+  }
 
   :hover {
     color: $primary-color;
