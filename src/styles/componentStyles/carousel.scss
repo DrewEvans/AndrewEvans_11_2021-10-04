@@ -5,6 +5,14 @@
   display: flex;
   align-items: center;
 
+  @include laptop {
+    justify-content: center;
+    width: 100%;
+  }
+  @include tablet {
+    justify-content: center;
+    width: 100%;
+  }
   @include phone {
     justify-content: center;
     width: 330px;
@@ -22,12 +30,24 @@
   }
   .right-angle {
     right: 6%;
+    @include laptop {
+      right: 10%;
+    }
+    @include tablet {
+      right: 10%;
+    }
     @include phone {
       right: 10%;
     }
   }
   .left-angle {
     left: 6%;
+    @include laptop {
+      left: 10%;
+    }
+    @include tablet {
+      left: 10%;
+    }
     @include phone {
       left: 10%;
     }
@@ -39,6 +59,14 @@
     object-fit: cover;
     border-radius: 10px;
 
+    @include laptop {
+      width: 880px;
+      height: 415px;
+    }
+    @include tablet {
+      width: 650px;
+      height: 412px;
+    }
     @include phone {
       width: 335px;
       height: 255px;

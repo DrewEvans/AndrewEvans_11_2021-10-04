@@ -20,6 +20,14 @@
   width: 1240px;
   position: relative;
 
+  @include laptop {
+    width: 85%;
+  }
+
+  @include tablet {
+    width: 85%;
+  }
+
   @include phone {
     width: 335px;
   }

@@ -13,6 +13,13 @@
   flex-direction: column;
   height: max-content;
   cursor: pointer;
+
+  @include laptop {
+    width: 380px;
+  }
+  @include tablet {
+    width: 300px;
+  }
   @include phone {
     width: 335px;
   }
