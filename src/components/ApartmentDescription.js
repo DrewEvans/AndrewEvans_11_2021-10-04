@@ -9,8 +9,6 @@ const ApartmentDescription = ({ description }) => {
   const angleUp = <FontAwesomeIcon icon={faAngleUp} />;
   const angleDown = <FontAwesomeIcon icon={faAngleDown} />;
 
-  console.log(openDialog);
-
   return (
     <>
       <div className='description-dropdown'>

@@ -12,7 +12,7 @@ const ApartmentInfo = ({ title, location, host, rating, tags }) => {
           <h3 className='location'>{location}</h3>
           <ul>
             {tags.map((x, i) => (
-              <li key={i}>{x}</li>
+              <li key={`${i}${x}`}>{x}</li>
             ))}
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-import { ApartmentCard, NavHeader, PageFooter } from "../components/index";
+import { ApartmentCard, NavHeader } from "../components/index";
 import MainBanner from "../components/MainBanner";
 import "../styles/home.scss";
 import FooterPage from "../components/PageFooter";
@@ -17,7 +17,7 @@ const Home = () => {
       {apartments && (
         <main className='home-main'>
           <div className='cards-container'>
-            {apartments.map((x) => {
+            {apartments.map((x, i) => {
               const {
                 title,
                 location,
@@ -30,20 +30,18 @@ const Home = () => {
                 id,
               } = x;
               return (
-                <>
-                  <ApartmentCard
-                    key={id}
-                    title={title}
-                    location={location}
-                    cover={cover}
-                    pictures={pictures}
-                    host={host}
-                    equipments={equipments}
-                    ratings={ratings}
-                    tags={tags}
-                    id={id}
-                  />
-                </>
+                <ApartmentCard
+                  key={`card-${id}`}
+                  title={title}
+                  location={location}
+                  cover={cover}
+                  pictures={pictures}
+                  host={host}
+                  equipments={equipments}
+                  ratings={ratings}
+                  tags={tags}
+                  id={id}
+                />
               );
             })}
           </div>

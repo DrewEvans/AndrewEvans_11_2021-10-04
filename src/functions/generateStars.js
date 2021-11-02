@@ -46,23 +46,25 @@ const starRating = (num) => {
         </>
       );
     case 3:
-      <>
-        <li className='known-star' alt='star'>
-          {element}
-        </li>
-        <li className='known-star' alt='star'>
-          {element}
-        </li>
-        <li className='known-star' alt='star'>
-          {element}
-        </li>
-        <li className='unknown-star' alt='star'>
-          {element}
-        </li>
-        <li className='unknown-star' alt='star'>
-          {element}
-        </li>
-      </>;
+      return (
+        <>
+          <li className='known-star' alt='star'>
+            {element}
+          </li>
+          <li className='known-star' alt='star'>
+            {element}
+          </li>
+          <li className='known-star' alt='star'>
+            {element}
+          </li>
+          <li className='unknown-star' alt='star'>
+            {element}
+          </li>
+          <li className='unknown-star' alt='star'>
+            {element}
+          </li>
+        </>
+      );
     case 4:
       return (
         <>

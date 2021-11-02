@@ -3,7 +3,6 @@ import React, { Suspense, lazy } from "react";
 // import useFetch from "./hooks/useFetch";
 import { ErrorPage, About } from "./pages/index";
 import "./App.scss";
-import FooterPage from "./components/PageFooter";
 
 const Home = lazy(() => import("./pages/Home"));
 const ApartmentPage = lazy(() => import("./pages/ApartmentPage"));

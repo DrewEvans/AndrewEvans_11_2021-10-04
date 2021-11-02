@@ -7,7 +7,6 @@ import {
   ApartmentInfo,
   Carousel,
   NavHeader,
-  PageFooter,
 } from "../components";
 import "../styles/apartment.scss";
 import { useParams } from "react-router";
@@ -18,14 +17,8 @@ const ApartmentPage = () => {
   const { response } = useFetch(`http://localhost:5000/api/appartement/${id}`);
   const apartment = response.data;
 
-  if (response.data != null && response.loading === false) {
-    console.log(response.data);
-    console.log("displ");
-  }
-
   if (response.data && response.loading === false) {
     if (response.data.length <= 0) {
-      console.log(response.data);
       return <ErrorPage />;
     }
   }
@@ -37,7 +30,7 @@ const ApartmentPage = () => {
       </nav>
       {apartment && (
         <div>
-          {apartment.map((x) => {
+          {apartment.map((x, i) => {
             const {
               title,
               location,
@@ -50,8 +43,8 @@ const ApartmentPage = () => {
               key,
             } = x;
             return (
-              <main className='apart-main'>
-                <Carousel pictures={pictures} />
+              <main className='apart-main' key={`apart-${id}`}>
+                <Carousel key={`carousel-${key}-${i}`} pictures={pictures} />
                 <ApartmentInfo
                   key={key}
                   title={title}

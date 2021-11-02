@@ -5,8 +5,6 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/componentStyles/equipmentDropdown.scss";
 
 const ApartmentEquipment = ({ equipments }) => {
-  console.log(equipments);
-
   const [openDialog, setOpenDialog] = useState(false);
   const angleUp = <FontAwesomeIcon icon={faAngleUp} />;
   const angleDown = <FontAwesomeIcon icon={faAngleDown} />;

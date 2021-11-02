@@ -8,8 +8,6 @@ const Carousel = ({ pictures }) => {
   const [current, setCurrent] = useState(0);
   const length = pictures.length;
 
-  console.log(pictures.length);
-
   const leftAngle = <FontAwesomeIcon icon={faAngleLeft} />;
   const rightAngle = <FontAwesomeIcon icon={faAngleRight} />;
 
