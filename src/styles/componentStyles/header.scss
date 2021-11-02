@@ -36,15 +36,17 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    width: 250px;
+    width: 350px;
+
     @include phone {
       width: 150px;
     }
     h2 {
       color: $primary-color;
       text-decoration: none;
+
       @include laptop {
-        font-size: 1em;
+        font-size: 1.2em;
       }
       @include tablet {
         font-size: 1em;
