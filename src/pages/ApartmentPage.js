@@ -1,6 +1,4 @@
-import useFetch from "../hooks/useFetch";
-
-import ErrorPage from "../pages/ErrorPage";
+// import ErrorPage from "../pages/ErrorPage";
 import {
   ApartmentDescription,
   ApartmentEquipment,
@@ -9,62 +7,69 @@ import {
   NavHeader,
 } from "../components";
 import "../styles/apartment.scss";
-import { useParams } from "react-router";
 import FooterPage from "../components/PageFooter";
+import React from "react";
 
-const ApartmentPage = () => {
-  const { id } = useParams();
-  const { response } = useFetch(`http://localhost:5000/api/appartement/${id}`);
-  const apartment = response.data;
+class ApartmentPage extends React.Component {
+  state = {
+    response: [],
+    apartment: [],
+  };
 
-  if (response.data && response.loading === false) {
-    if (response.data.length <= 0) {
-      return <ErrorPage />;
-    }
+  componentDidMount() {
+    const id = this.props.match.params.id;
+
+    fetch(`http://localhost:5000/api/appartement/${id}`)
+      .then((response) => response.json())
+      .then((apartment) => {
+        this.setState({ resonse: "loaded", apartment: apartment });
+      });
   }
 
-  return (
-    <div className='apartment-page-container'>
-      <nav>
-        <NavHeader />
-      </nav>
-      {apartment && (
-        <div>
-          {apartment.map((x, i) => {
-            const {
-              title,
-              location,
-              pictures,
-              description,
-              host,
-              equipments,
-              rating,
-              tags,
-              key,
-            } = x;
-            return (
-              <main className='apart-main' key={`apart-${id}`}>
-                <Carousel key={`carousel-${key}-${i}`} pictures={pictures} />
-                <ApartmentInfo
-                  key={key}
-                  title={title}
-                  location={location}
-                  host={host}
-                  rating={rating}
-                  tags={tags}
-                />
-                <div className='dropdown-container'>
-                  <ApartmentDescription description={description} />
-                  <ApartmentEquipment equipments={equipments} />
-                </div>
-              </main>
-            );
-          })}
-        </div>
-      )}
-      <FooterPage />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className='apartment-page-container'>
+        <nav>
+          <NavHeader />
+        </nav>
+        {this.state.apartment && (
+          <div>
+            {this.state.apartment.map((x, i) => {
+              const {
+                title,
+                location,
+                pictures,
+                description,
+                host,
+                equipments,
+                rating,
+                tags,
+                key,
+              } = x;
+              return (
+                <main className='apart-main' key={`apart-${this.props.id}`}>
+                  <Carousel key={`carousel-${key}-${i}`} pictures={pictures} />
+                  <ApartmentInfo
+                    key={key}
+                    title={title}
+                    location={location}
+                    host={host}
+                    rating={rating}
+                    tags={tags}
+                  />
+                  <div className='dropdown-container'>
+                    <ApartmentDescription description={description} />
+                    <ApartmentEquipment equipments={equipments} />
+                  </div>
+                </main>
+              );
+            })}
+          </div>
+        )}
+        <FooterPage />
+      </div>
+    );
+  }
+}
 
 export default ApartmentPage;

@@ -1,58 +1,49 @@
-import { useState } from "react";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/componentStyles/equipmentDropdown.scss";
 
-export type openDialogProps = { label?: Boolean };
-export type openDialogState = { state: false };
 class ApartmentEquipment extends React.Component {
-	state: openDialogState = {
-		state: false,
-	};
+  constructor(props) {
+    super(props);
+    this.state = { openDialog: false };
 
-	render() {
-		let { openDialog } = this.state;
-		const { equipments } = this.props;
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-		// const [openDialog, setOpenDialog] = useState(false);
-		const angleUp = <FontAwesomeIcon icon={faAngleUp} />;
-		const angleDown = <FontAwesomeIcon icon={faAngleDown} />;
+  handleClick() {
+    this.setState((prevState) => ({
+      openDialog: !prevState.openDialog,
+    }));
+  }
 
-		return (
-			<>
-				<div className='equipment-dropdown'>
-					<div
-						className='button'
-						onClick={() =>
-							openDialog
-								? (openDialog = false)
-								: (openDialog = true)
-						}
-					>
-						Équipements
-						{!openDialog && <span>{angleDown}</span>}
-						{openDialog && <span>{angleUp}</span>}
-					</div>
-					{openDialog ? (
-						<ul
-							className='open-dialog'
-							onClick={() =>
-								openDialog
-									? (openDialog = false)
-									: (openDialog = true)
-							}
-						>
-							{equipments.map((equipment, i) => (
-								<li key={`${i}-equip`}>{equipment}</li>
-							))}
-						</ul>
-					) : null}
-				</div>
-			</>
-		);
-	}
+  render() {
+    let { openDialog } = this.state;
+    const { equipments } = this.props;
+    const angleUp = <FontAwesomeIcon icon={faAngleUp} />;
+    const angleDown = <FontAwesomeIcon icon={faAngleDown} />;
+
+    return (
+      <>
+        <div className='equipment-dropdown'>
+          <div className='button' onClick={this.handleClick}>
+            Équipements
+            {!openDialog && <span>{angleDown}</span>}
+            {openDialog && <span>{angleUp}</span>}
+          </div>
+          {openDialog ? (
+            <ul className='open-dialog' onClick={this.handleClick}>
+              {equipments.map((equipment, i) => (
+                <li key={`${i}-equip`}>{equipment}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </>
+    );
+  }
 }
 
 export default ApartmentEquipment;
