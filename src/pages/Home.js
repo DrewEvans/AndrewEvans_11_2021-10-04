@@ -1,4 +1,3 @@
-import useFetch from "../hooks/useFetch";
 import { ApartmentCard, NavHeader } from "../components/index";
 import MainBanner from "../components/MainBanner";
 import "../styles/home.scss";

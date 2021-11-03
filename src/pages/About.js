@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Banner from "../images/about-backdrop.png";
 import { NavHeader } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +8,6 @@ import "../styles/about.scss";
 import FooterPage from "../components/PageFooter";
 
 class About extends React.Component {
-  // const [openDialog1, setOpenDialog1] = useState(false);
-  // const [openDialog2, setOpenDialog2] = useState(false);
-  // const [openDialog3, setOpenDialog3] = useState(false);
-  // const [openDialog4, setOpenDialog4] = useState(false);
-
   constructor(props) {
     super(props);
     this.state = {
