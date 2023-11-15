@@ -30,6 +30,7 @@
   }
   .right-angle {
     right: 6%;
+    cursor: pointer;
     @include laptop {
       right: 10%;
     }
@@ -42,6 +43,7 @@
   }
   .left-angle {
     left: 6%;
+    cursor: pointer;
     @include laptop {
       left: 10%;
     }

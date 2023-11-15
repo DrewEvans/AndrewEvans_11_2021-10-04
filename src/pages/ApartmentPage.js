@@ -14,7 +14,7 @@ import FooterPage from "../components/PageFooter";
 
 const ApartmentPage = () => {
   const { id } = useParams();
-  const { response } = useFetch(`http://localhost:5000/api/appartement/${id}`);
+  const { response } = useFetch(`https://devporium-rest.onrender.com/kasa/apartment/${id}`);
   const apartment = response.data;
 
   if (response.data && response.loading === false) {

@@ -8,15 +8,15 @@ const NavHeader = () => {
       <NavLink to='/'>
         <img src={Logo} alt='Kasa-logo' />
       </NavLink>
-      <div className='links-container'>
+      <ul className='links-container'>
         <NavLink style={{ textDecoration: "none" }} to='/'>
-          <h2>Accueil</h2>
+          <li>Accueil</li>
         </NavLink>
 
         <NavLink style={{ textDecoration: "none" }} to='/about'>
-          <h2>A Propos</h2>
+          <li>A Propos</li>
         </NavLink>
-      </div>
+      </ul>
     </div>
   );
 };

@@ -41,9 +41,12 @@
     @include phone {
       width: 150px;
     }
-    h2 {
+        li {
       color: $primary-color;
       text-decoration: none;
+      list-style: none;
+        font-weight: bold;
+        font-size: 24px;
 
       @include laptop {
         font-size: 1.2em;

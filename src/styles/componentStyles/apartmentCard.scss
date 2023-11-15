@@ -3,6 +3,7 @@
 
 .card-container {
   display: flex;
+  flex-direction: column;
   height: 340px;
   width: 340px;
   margin: 2em;
@@ -38,17 +39,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
-    right: 100%;
+    position: absolute;
     font-size: 1em;
     margin: 0 1em;
+    width: 240px;
 
     @include phone {
       font-size: 0.85em;
     }
 
     h2 {
-      width: 220px;
+      
       text-shadow: black 0.5px 0 10px;
     }
   }

@@ -5,7 +5,7 @@ import "../styles/home.scss";
 import FooterPage from "../components/PageFooter";
 
 const Home = () => {
-  const { response } = useFetch(`http://localhost:5000/api/data`);
+  const { response } = useFetch(`https://devporium-rest.onrender.com/kasa/data`);
   const apartments = response.data;
 
   return (
