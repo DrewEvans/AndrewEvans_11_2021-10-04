@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "nodemon server",
-    "build": "CI= npm run build",
+    "build": "CI='' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
